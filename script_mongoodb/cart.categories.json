@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "650ee63742b83c6e4c4a1089"
+  },
+  "title": "Đồ chơi",
+  "slug": "đồ-chơi",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "651691e576773437dc27dfc5"
+  },
+  "title": "Poster",
+  "slug": "poster",
+  "__v": 0
+}]

@@ -1,0 +1,21 @@
+<% include layout/headerlog %>
+
+<h1><%= title %></h1>
+
+<form method="post" action="/users/login">
+    
+    <div class="form-group">
+        <label>Tên người dùng</label>
+        <input type="text" name="username" class="form-control" placeholder="Username">
+    </div>
+    <br>
+    <div class="form-group">
+        <label>Mật khẩu</label>
+        <input type="password" name="password" class="form-control"  placeholder="Mật khẩu">
+    </div>
+    <br>
+
+    <button type="submit" class="btn btn-success">Log in</button>
+</form>
+
+<% include layout/footer %>

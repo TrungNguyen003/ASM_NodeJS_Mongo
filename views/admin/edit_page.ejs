@@ -1,0 +1,30 @@
+<%- include('../layout/adminheader') %>
+<br>
+
+<h2 class="page-title">Chỉnh sửa trang</h2>
+<a href="/admin/pages" class="btn btn-primary">Quay lại</a>
+<br><br>
+
+<form method="post" action="/admin/pages/edit-page/<%= id %>">
+    
+    <div class="form-group">
+        <label for="">Tiêu đề</label>
+        <input type="text" class="form-control" name="title" value="<%= title %>" placeholder="Tiêu đề">
+    </div>
+    <br>
+    
+    <div class="form-group">
+        <label for="">Đinh dạng</label>
+        <input type="text" class="form-control" name="slug" value="<%= slug %>" placeholder="Định dạng trang">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="">Nội dung</label>
+        <textarea name="content" class="form-control" id="ta" cols="30" rows="10" placeholder="Nội dung"><%= content %></textarea>
+    </div>
+    <br>
+    
+    <button class="btn btn-success">Tạo mới</button>
+</form>
+
+<%- include('../layout/adminfooter') %>

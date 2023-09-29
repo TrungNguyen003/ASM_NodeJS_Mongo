@@ -1,0 +1,36 @@
+<% include layout/header %>
+
+<div class="row">    
+    <div class="col-xs-12 col-md-5">
+        <img class="spii" src="/product_images/<%= p.id %>/<%= p.image %>" alt="">
+        <br>
+    </div>
+    <div class="col-xs-12 col-md-7" id="cont">
+        <p class="ten"><%= p.desc %></p>
+        <p class="price">&nbsp; <%= parseFloat(p.price).toFixed(3) %><u>đ</u></p>
+        <% if (loggedIn) { %>
+            <button>
+        
+                <a  href="/cart/add/<%= p.slug %>">&nbsp; Thêm vào giỏ hàng</a>
+            </button>
+            
+        <% } else {%> 
+        <p>Bạn phải đăng nhập để mua các mặt hàng.</p>
+        <% } %>
+    </div>
+    <div class="col-xs-12">
+        <ul class="gallery">
+            <% galleryImages.forEach(function(image){ %>
+            <% if (image != "thumbs") { %>
+            <li>
+                <a data-fancybox="gallery" href="/product_images/<%= p.id %>/gallery/<%= image %>">
+                    <img src="/product_images/<%= p.id %>/gallery/thumbs/<%= image %>" alt="">
+                </a>
+            </li>
+            <% } %>
+            <% }); %>
+        </ul>
+    </div>
+</div>
+
+<% include layout/footer %>

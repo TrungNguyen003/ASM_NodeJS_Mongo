@@ -1,0 +1,67 @@
+<%- include('../layout/adminheader') %>
+<br>
+<h2 class="page-title">Thêm sản phẩm</h2>
+<a href="/admin/products" class="btn btn-primary">Quay lại</a>
+<br><br>
+
+<form method="post" action="/admin/products/add-product" enctype="multipart/form-data">
+    
+    <div class="form-group">
+        <label for="">Tiêu đề</label>
+        <input type="text" class="form-control" name="title" value="<%= title %>" placeholder="Tiêu đề">
+    </div>
+<br>
+    
+    <div class="form-group">
+        <label for="">Sự miêu tả</label>
+        <textarea name="desc" class="form-control" cols="30" rows="10" placeholder="Sự miêu tả"><%= desc %></textarea>
+    </div>
+<br>
+    
+    <div class="form-group">
+        <label for="">Loại</label>
+        <select name="category" class="form-control">
+            <% categories.forEach(function(cat){ %>
+                <option value="<%= cat.slug %>"><%= cat.title %></option>
+            <% }); %>
+        </select>
+    </div>
+<br>
+    
+    <div class="form-group">
+        <label for="">Giá</label>
+        <input type="text" class="form-control" name="price" value="<%= price %>" placeholder="Giá">
+    </div>
+<br>
+    
+    <div class="form-group">
+        <label for="">Hình ảnh</label>
+        <input type="file" class="form-control" name="image" id="img">
+        <img src="#" id="imgPreview" alt="">
+    </div>
+<br>
+    
+    <button class="btn btn-success">Hoàn tất thêm</button>
+</form>
+
+<script>
+    
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function(e) {
+                $("#imgPreview").attr('src', e.target.result).width(100).height(100);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+    $("#img").change(function() {
+        readURL(this);
+    });
+    
+</script>
+
+<%- include('../layout/adminfooter') %>

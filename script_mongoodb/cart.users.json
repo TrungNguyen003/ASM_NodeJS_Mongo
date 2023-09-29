@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "650ee5ff42b83c6e4c4a1069"
+  },
+  "name": "luagaaa",
+  "email": "trung@dz.vn",
+  "username": "zeo",
+  "password": "$2a$10$yeGYTaNzW2XxHDKASPk9S.CxYczJJtShyFg/eTxd5kyq42Zz7mL02",
+  "admin": 1,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6516915576773437dc27df11"
+  },
+  "name": "trung",
+  "email": "trung123@gmail.com",
+  "username": "test1",
+  "password": "$2a$10$fR65tCR85sq2qroViA.rc.gLzH6QBjw0dwu34qaeEw4AOoRgTmNay",
+  "admin": 0,
+  "__v": 0
+}]

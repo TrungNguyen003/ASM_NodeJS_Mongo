@@ -1,0 +1,49 @@
+<%- include('../layout/adminheader') %>
+<br>
+<h2 class="page-title">Quản lí trang</h2>
+<a href="/admin/pages/add-page" class="btn btn-primary">Thêm mới trang</a>
+<br><br>
+
+<table class="table table-striped sorting">
+
+    <thead>
+        <tr class="home">
+            <th>Tiêu đề</th>
+            <th>Sửa</th>
+            <th>Xóa</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% pages.forEach(function(page){ %>
+        <tr id="id_<%= page._id %>" class="<%= page.slug %>">
+            <td><%= page.title %></td>
+            <td><a href="/admin/pages/edit-page/<%= page._id %>">Sửa</a></td>
+            <% if (page.slug == "home") { %>
+            <td></td>
+            <% }  else {%>
+            <td><a class="confirmDeletion" href="/admin/pages/delete-page/<%= page._id %>">Xóa</a></td>
+            <% }%>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+<script>
+
+    $('tbody').sortable({
+
+        items: "tr:not('.home')",
+        placeholder: "ui-state-hightlight",
+        update: function () {
+            var ids = $('tbody').sortable("serialize");
+            var url = "/admin/pages/reorder-pages";
+            
+            $.post(url, ids);
+        }
+
+    });
+
+</script>
+
+<%- include('../layout/adminfooter') %>

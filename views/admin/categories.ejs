@@ -1,0 +1,27 @@
+<%- include('../layout/adminheader') %>
+<br>
+<h2 class="page-title">Thể loại</h2>
+<a href="/admin/categories/add-category" class="btn btn-primary">Thêm một danh mục mới</a>
+<br><br>
+
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>Loại</th>
+            <th>Sửa</th>
+            <th>Xóa</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% categories.forEach(function(cat){ %>
+        <tr>
+            <td><%= cat.title %></td>
+            <td><a href="/admin/categories/edit-category/<%= cat._id %>">Sửa</a></td>
+            <td><a class="confirmDeletion" href="/admin/categories/delete-category/<%= cat._id %>">Xóa</a></td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+<%- include('../layout/adminfooter') %>

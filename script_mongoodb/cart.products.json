@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "65139774b25c9254f45f903e"
+  },
+  "title": "Mũ phù thủy",
+  "slug": "mũ-phù-thủy",
+  "desc": "Mũ phù thủy",
+  "price": 10,
+  "category": "đồ-chơi",
+  "image": "1 (1).png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "651397c4b25c9254f45f9069"
+  },
+  "title": "trang phục",
+  "slug": "trang-phục",
+  "desc": "Áo Choàng Ma",
+  "price": 400,
+  "category": "đồ-chơi",
+  "image": "3.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "651397efb25c9254f45f907c"
+  },
+  "title": "quần",
+  "slug": "quần",
+  "desc": "Hình nộm ",
+  "price": 200,
+  "category": "đồ-chơi",
+  "image": "4.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6516923176773437dc27e01c"
+  },
+  "title": "Poster wibu",
+  "slug": "poster-wibu",
+  "desc": "wibu",
+  "price": 100,
+  "category": "poster",
+  "image": "sword-art-online-kirigaya-kazuto-yuuki-asuna-anime-wallpaper-preview.jpg",
+  "__v": 0
+}]

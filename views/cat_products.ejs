@@ -1,0 +1,24 @@
+<% include layout/header %>
+
+<div class="row products">
+    
+    <% products.forEach(function(p){ %>
+            <div class="col-xs-12 col-md-3 p">
+                <a class="pa" href="/products/<%= p.category %>/<%= p.slug %>">
+                    <img class="pimage" src="/product_images/<%= p.id %>/<%= p.image %>" alt="" height="140">
+                </a>
+                <h3><%= p.title %></h3>
+                <h4  style="color: rgba(255, 0, 0, 0.678);"><%= parseFloat(p.price).toFixed(3) %>đ</h4>
+                
+                <button class="custom-btn btn-12">
+                    <span>
+                        <a class="ai" href="/products/<%= p.category %>/<%= p.slug %>">Xem thêm</a>
+                   </span>
+                     <span> Click!</span>
+                 </button>
+            </div>
+        <% }); %>
+    
+</div>
+
+<% include layout/footer %>

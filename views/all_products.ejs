@@ -1,0 +1,39 @@
+<% include layout/header %>
+<br>
+<div class="slidee">
+    <div id="slides">
+        <div class="sl"><img src="https://www.slidescarnival.com/wp-content/uploads/2020/10/Free-Halloween-Powerpoint-template-Google-Slides-theme-paper-cut-illustrations.jpg.optimal.jpg"  ></div>
+        <div class="sl"><img src="https://i.ytimg.com/vi/sgI4oKO2iac/maxresdefault.jpg"  ></div>
+        <div class="sl"><img src="https://img4.thuthuatphanmem.vn/uploads/2019/10/26/anh-background-halloween_093146788.jpg"  ></div> 
+      <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="icon-chevron-left icon-large"></i></a>
+      <a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right icon-large"></i></a>
+    </div>
+  </div>
+<br>
+
+<div class="task">
+    <a href="/index">Trang chủ</a> / <a href="/products">Tất cả sản phẩm</a>
+  </div>
+  <br>
+<div class="row products"> 
+    <% products.forEach(function(p){ %>
+            <div class="col-xs-14 col-md-3 p">
+                <a class="pa" href="/products/<%= p.category %>/<%= p.slug %>">
+                    <img class="pimage" src="/product_images/<%= p.id %>/<%= p.image %>" alt="" >
+                </a>
+                <h5><%= p.title %></h5>
+                <h6 style="color: rgba(255, 0, 0, 0.678);"><%= parseFloat(p.price).toFixed(3) %><u>đ</u></h6>
+                
+                <button class="custom-btn btn-12">
+                 <span>
+                  <a class="ai" href="/products/<%= p.category %>/<%= p.slug %>">Xem thêm</a>
+                </span>
+                  <span> Click!</span>
+              </button>
+                
+            </div>
+        <% }); %>
+    
+</div>
+
+<% include layout/footer %>
